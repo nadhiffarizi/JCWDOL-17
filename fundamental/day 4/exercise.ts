@@ -78,3 +78,71 @@
 // words.push(temp.join(""))
 
 // console.log(words)
+
+// My code----------------------------------------------------------------------
+// NO 1 triangle pattern
+// let $num:number = 4; // height of the triangle
+// let $count:number = 1;
+// let $str:string = ""
+
+// for (let i=1; i<=$num; i++){
+//     for(let j=1; j<=i; j++){
+//         if($count < 10) $str += `0${$count} `;
+//         else $str += `${$count} `
+//         $count++ 
+//     }
+//     console.log($str);
+//     $str = ""
+    
+// }
+
+
+// NO 2 fizzbuzz
+// const fizzBuzz = (n:number) =>{
+//     for (let i=1; i<=n; i++){
+//         if ((i %3 === 0) && (i % 5 ===0)){
+//             console.log("FizzBuzz");
+            
+//         } else if( i % 3 === 0){
+//             console.log("Fizz");
+            
+//         } else if (i % 5 === 0){
+//             console.log("Buzz");
+            
+//         } else {console.log(i);}
+        
+//     }
+// }
+// fizzBuzz(6)
+
+
+// NO 3 BMI and classification of obesesity
+// const bmi = (w:number, h:number) =>{
+//     let bmi:number = w / h;
+
+//     if(bmi < 18.5) console.log("less weight");
+//     else if ((bmi>=18.5) && (bmi<24.9)) console.log("ideal");
+//     else if ((bmi>=24.9) && (bmi<29.9)) console.log("overweight");
+//     else if ((bmi>=30) && (bmi <39.9)) console.log("very overweight");
+//     else console.log("obese")
+// }
+
+// bmi(90, 170)
+
+// NO 4 remove odd numbers in array
+// let $arr:number[] = [1,2,3,4,5,6,7,8,9,10]
+
+// const result = (arr:number[]) =>{
+//     return arr.filter((i) => i%2 !==0)
+// }
+
+// console.log(result($arr));
+
+// NO 5 split string
+// const splitStr = (str:string)=>{
+//     return str.split(' ')
+// }
+
+// console.log(splitStr("Hello World"));
+
+

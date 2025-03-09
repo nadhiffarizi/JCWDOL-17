@@ -254,3 +254,8 @@
 // }
 
 // console.log(suit("test"))
+
+let x:Object = {a:2, b:4, c:1, d:6}
+let y:Object = {b:7, c:2, z:6, h:9}
+
+console.log({...x, ...y});

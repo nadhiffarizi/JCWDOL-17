@@ -1,68 +1,125 @@
-/** @format */
+// populate object MUST use dictionary RECORD in typescript
 
-// Create a function to calculate array of student data
-// The object has this following properties :
-// Name → String
-// Email → String
-// Age → Number
-// Score → Number
-// Parameters : array of student
-// Return values :
-// Object with this following properties :
-// Score
-// Highest
-// Lowest
-// Average
-// Age
-// Highest
-// Lowest
-// Average
+// let $arr:(number|string)[] = [1, 2, 3, "hahaha"]
 
-class Student {
-  name: string;
-  email: string;
-  age: number;
-  score: number;
-  constructor(name: string, email: string, age: number, score: number) {
-    this.name = name;
-    this.email = email;
-    this.age = age;
-    this.score = score;
-  }
-}
+// type Dict = Record<number|string, number|string>
 
-class LHA {
-  highest: number;
-  lowest: number;
-  average: number = 0;
-  constructor(numbers: number[]) {
-    this.highest = Math.max(...numbers);
-    this.lowest = Math.min(...numbers);
-    for (let i = 0; i < numbers.length; i++) {
-      this.average += numbers[i]; //cari sumnya
-    }
-    this.average = this.average / numbers.length;
-  }
-  //   get result() {
-  //     return {
-  //       highest: this.highest,
-  //       lowest: this.lowest,
-  //       average: this.average,
-  //     };
-  //   }
-}
+// let $obj:Dict = {}
 
-const test = new LHA([5, 3, 7, 8, 10, 23, 45]);
 
-const calculateArrayStudent = (students: Student[]) => {
-  return {
-    score: new LHA(students.map((student) => student.score)),
-    age: new LHA(students.map((student) => student.age)),
-  };
-};
+// for (const [i, val] of $arr.entries()){
+//     // console.log(`index ${i}, val ${val}`);
+//     $obj[val] = val.toString() + "recorded"
+    
+// }
 
-const john = new Student("john", "john@mail.com", 15, 88);
-const alex = new Student("alex", "alex@mail.com", 16, 90);
-const bambang = new Student("bambang", "bambang@mail.com", 17, 95);
+// console.log($obj["hahaha"]);
 
-console.log(calculateArrayStudent([john, alex, bambang]));
+// NO. 1 -------------------------------------------------
+// type $Stud = {
+//     name:string,
+//     email:string,
+//     age:string,
+//     score:number
+// }
+
+// type $Age= {
+//     highest:number,
+//     lowest:number,
+//     average:number
+// }
+
+// type $Score = {
+//     highest:number,
+//     lowest:number,
+//     average: number
+// }
+
+
+// const studs:$Stud[] = []
+
+// function calculateStud(input:$Stud[]):($Age & $Score)[]{
+//     let tempAges:number[] = []
+//     let tempScore:number[] = []
+//     for (let stud of input){
+//         tempAges.push(Number(stud.age))
+//         tempScore.push(Number(stud.score))
+//     }
+
+//     // calc ages
+//     let max:number = Math.max(...tempAges)
+//     let min:number = Math.min(...tempAges)
+//     let total:number = tempAges.reduce((acc, val)=> acc+val, 0)
+//     let avg:number = total / tempAges.length
+    
+    
+//     const objAge:$Age = {
+//         highest:max,
+//         lowest:min,
+//         average:avg
+//     }
+
+//     // Calc Score
+//     max = Math.max(...tempScore)
+//     min = Math.min(...tempScore)
+//     total = tempScore.reduce((acc, val)=> acc+val, 0)
+//     avg = total / tempScore.length
+
+    
+//     const objScore:$Score = {
+//         highest:max,
+//         lowest:min,
+//         average:avg
+//     }
+
+//     return [objAge, objScore]
+    
+    
+// }
+
+// NO 2 ----------------------------------------------
+// class MyProduct{
+//     public name:string;
+//     public price:string;
+//     constructor(name:string, price:string){
+//         this.name = name;
+//         this.price = price
+//     }
+// }
+
+// class MyTransaction extends MyProduct{
+//     public total:number;
+//     public product:Record<string, any>
+    
+//     constructor(name:string, price:string, total:number){
+//         super(name, price)
+//         this.total = total
+//         this.product = {
+//             prodData: [new MyProduct(name, price)],
+//             qtyTotal: 0
+//         }
+//     }
+
+//     public addCart(prod:MyProduct, qty:number){
+//         this.product.prodData.push(prod)
+//         this.product.qtyTotal += qty
+//     }
+
+//     public totalTransaction():number{
+//         return this.product.prodData.length
+//     }
+
+//     public checkout():MyProduct[]{
+//         return this.product.prodData
+//     }
+
+// }
+
+// const example:MyTransaction = new MyTransaction("tshirt", "1000", 2)
+
+// example.addCart(new MyProduct("tshirt", "5000"), 300)
+
+// console.log(example.totalTransaction());
+// console.log(example.checkout());
+
+

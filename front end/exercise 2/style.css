@@ -1,0 +1,31 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.table{
+    background-color: #FFA326;
+    width: 90%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1500px;
+    border-collapse: collapse;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+
+}
+
+table, th, td {
+    border: 1px solid;
+}
+
+th, td{
+    text-align: center;
+}
+
+td > img{
+    width: 100%;
+    max-height: 200px;
+}
